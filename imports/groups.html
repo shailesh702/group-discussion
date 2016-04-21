@@ -1,0 +1,50 @@
+<template name="group">
+  <span>Groups Discussion</span>
+   
+  <div class="container">    
+    <div class="row">    
+    <div class="col-md-6">
+        <div class="widget-area no-padding blank">
+            <div class="status-upload">
+                <form class="new-post">
+                    
+                  <textarea placeholder="Write here to create thread" name="commentbox" id="commentbox"></textarea>
+                    
+                   <ul>
+                      <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
+                      <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
+                      <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
+                      <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
+                  </ul>
+                  <button type="submit" class="btn btn-success green" id="add"><i class="fa fa-share"></i> Post</button>
+                    <p name="para1"></p>
+                  <!--<textarea name="text2"></textarea>-->
+
+                </form>
+                </div><!-- Status Upload  -->
+
+              </div><!-- Widget Area -->
+              
+      </div>
+    </div>
+    <!--<div class="container">
+    <form style="margin-top: 30px" class="show-post">
+      <textarea name="show1 " id="show1"></textarea>
+    </form>
+    </div>-->
+</div>
+
+</template>
+
+<template name = "postMessage">
+  <h4 style="margin: 20px">Threads :</h4> {{#each message}}
+  <div class="well well-lg" style="width: 700px;margin-left: 20px">
+      <span>
+             <!--{{#with name}} {{first}}-{{last}} {{/with}} -->
+             {{content}}
+      </span>
+      <span style="float: right">{{createdAt}}</span>
+
+  </div>
+  {{/each}}  
+</template>
