@@ -1,12 +1,8 @@
 
-//import { Mongo } from 'meteor/mongo';
-
-//import '../imports/groups.html';
-//import '../lib/collection.js';
-//import '../shared/method.js';
-
-//Thread = new Mongo.Collection('threads');
-
+/*Template.group.text=function(event){
+	var text = event.target.commentbox.value(); 
+	return text;
+};*/
 Template.body.events({
 	"submit .new-post": function(event){
 		event.preventDefault();
@@ -25,6 +21,19 @@ Template.postMessage.helpers({
 	'message':function(){
 		
 		return Thread.find({},{sort : {createdAt:-1} });
+	},
+	'count':function(){
+		return Thread.find().count();
+	}
+});
+
+Template.postMessage.events({
+	'click #delete' : function(){
+		Thread.remove(this._id);
+	},
+	'click #edit' :function(){
+		//event.target.commentbox.value = "hello";
+		//text = "hello";
 	}
 });
 

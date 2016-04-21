@@ -1,5 +1,4 @@
 <template name="group">
-  <span>Groups Discussion</span>
    
   <div class="container">    
     <div class="row">    
@@ -11,9 +10,9 @@
                   <textarea placeholder="Write here to create thread" name="commentbox" id="commentbox"></textarea>
                     
                    <ul>
-                      <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
-                      <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
-                      <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
                       <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
                   </ul>
                   <button type="submit" class="btn btn-success green" id="add"><i class="fa fa-share"></i> Post</button>
@@ -37,14 +36,22 @@
 </template>
 
 <template name = "postMessage">
-  <h4 style="margin: 20px">Threads :</h4> {{#each message}}
-  <div class="well well-lg" style="width: 700px;margin-left: 20px">
-      <span>
-             <!--{{#with name}} {{first}}-{{last}} {{/with}} -->
-             {{content}}
-      </span>
-      <span style="float: right">{{createdAt}}</span>
-
+  <div class="container">
+    <h4 style="margin: 20px ;width: 700px">Threads :
+      <span class="badge" style="float: right;">Total : {{count}}</span>
+    </h4> 
+    <br>
+    
+      {{#each message}}
+    
+      <div class="well well-lg" style="width: 700px;margin-left: 20px;display: inline-block;">
+          <span>{{content}}</span>
+          <span style="float: right">{{createdAt}}</span>
+      </div>
+    <span class="glyphicon glyphicon-trash" id="delete"></span>
+    <span class="glyphicon glyphicon-pencil" id="edit"></span>
+  
+    {{/each}} 
+    
   </div>
-  {{/each}}  
 </template>
