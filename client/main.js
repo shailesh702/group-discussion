@@ -6,6 +6,7 @@
 import './main.html';
 import '../imports/groups.html';
 import '../imports/groups.js';
+import '../imports/groups.css';
 import '../lib/collection.js';
 import '../shared/method.js';
 
